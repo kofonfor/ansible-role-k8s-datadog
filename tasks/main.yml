@@ -1,0 +1,5 @@
+- name: put values
+  template: src=values.yml dest=/tmp/datadog-{{ datadog_helm_release }}.yml
+
+- name: upgrade {{ datadog_helm_release }} release using a Helm chart
+  shell: helm upgrade {{ datadog_helm_release }} stable/datadog --install --namespace {{ k8s_namespace }} -f /tmp/datadog-{{ datadog_helm_release }}.yml

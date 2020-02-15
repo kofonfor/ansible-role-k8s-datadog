@@ -1,0 +1,4 @@
+datadog:
+  apiKey: {{ datadog_api_key }}
+  logsEnabled: true
+  logsConfigContainerCollectAll: true
